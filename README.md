@@ -6,6 +6,8 @@
 
 [![NPM](https://nodei.co/npm/ovh-angular-manager-navbar.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/ovh-angular-manager-navbar/)
 
+# Example
+
 ```javascript
 angular.module("myapp", ["ovh-angular-manager-navbar"]).constant("UNIVERSE", "Foo");
 
@@ -15,18 +17,18 @@ angular.module("myapp", ["ovh-angular-manager-navbar"]).constant("UNIVERSE", "Fo
 <manager-navbar></manager-navbar>
 ```
 
-# Installation
+## Installation
 
-## Bower
+### Bower
 
     bower install ovh-angular-manager-navbar --save
 
-## NPM
+### NPM
 
     npm install ovh-angular-manager-navbar --save
  
  
-# Configuration
+## Configuration
 
 1. Include `ovh-angular-manager-navbar.less` in your `app.less`:
 
@@ -70,12 +72,12 @@ npm test
 grunt ngdocs
 ```
  
-# Related links
+## Related links
  
  * Contribute: https://github.com/ovh-ux/ovh-angular-manager-navbar
  * Report bugs: https://github.com/ovh-ux/ovh-angular-manager-navbar/issues
  * Get latest version: https://github.com/ovh-ux/ovh-angular-manager-navbar
  
-# License
+## License
  
 See https://github.com/ovh-ux/ovh-angular-manager-navbar/blob/master/LICENSE
