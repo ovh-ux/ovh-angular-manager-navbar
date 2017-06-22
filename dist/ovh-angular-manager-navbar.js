@@ -256,7 +256,7 @@ angular.module("ovh-angular-manager-navbar")
     };
 }]);
 
-angular.module('managerNavbar').run(['$templateCache', function($templateCache) {
+angular.module('ovh-angular-manager-navbar').run(['$templateCache', function($templateCache) {
   'use strict';
 
   $templateCache.put('ovh-angular-manager-navbar.html',
