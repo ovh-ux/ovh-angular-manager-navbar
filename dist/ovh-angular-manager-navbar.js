@@ -9,7 +9,7 @@ Change to provider
 
 /**
  * @ngdoc service
- * @name managerNavbar.managerNavbar
+ * @name ovh-angular-manager-navbar.managerNavbar
  * @description
  *
  *
@@ -39,7 +39,7 @@ angular.module("ovh-angular-manager-navbar")
     /**
      * @ngdoc function
      * @name init
-     * @methodOf managerNavbar.managerNavbar
+     * @methodOf ovh-angular-manager-navbar.managerNavbar
      * @description
      *
      * Initialize the navbar and insert-it in the dom
@@ -65,7 +65,7 @@ angular.module("ovh-angular-manager-navbar")
     /**
      * @ngdoc function
      * @name getExternalLinks
-     * @methodOf managerNavbar.managerNavbar
+     * @methodOf ovh-angular-manager-navbar.managerNavbar
      * @description
      *
      * Get the external links
@@ -79,7 +79,7 @@ angular.module("ovh-angular-manager-navbar")
     /**
      * @ngdoc function
      * @name setExternalLinks
-     * @methodOf managerNavbar.managerNavbar
+     * @methodOf ovh-angular-manager-navbar.managerNavbar
      * @description
      *
      * Set the external links
@@ -93,7 +93,7 @@ angular.module("ovh-angular-manager-navbar")
     /**
      * @ngdoc function
      * @name setCurrentLink
-     * @methodOf managerNavbar.managerNavbar
+     * @methodOf ovh-angular-manager-navbar.managerNavbar
      * @description
      *
      * Set the current links
@@ -107,7 +107,7 @@ angular.module("ovh-angular-manager-navbar")
     /**
      * @ngdoc function
      * @name getCurrentLink
-     * @methodOf managerNavbar.managerNavbar
+     * @methodOf ovh-angular-manager-navbar.managerNavbar
      * @description
      *
      * Get the current links
@@ -122,7 +122,7 @@ angular.module("ovh-angular-manager-navbar")
     /**
      * @ngdoc function
      * @name setInternalLinks
-     * @methodOf managerNavbar.managerNavbar
+     * @methodOf ovh-angular-manager-navbar.managerNavbar
      * @description
      *
      * Set the internal links
@@ -136,7 +136,7 @@ angular.module("ovh-angular-manager-navbar")
     /**
      * @ngdoc function
      * @name getInternalLinks
-     * @methodOf managerNavbar.managerNavbar
+     * @methodOf ovh-angular-manager-navbar.managerNavbar
      * @description
      *
      * Get the internal links
@@ -150,7 +150,7 @@ angular.module("ovh-angular-manager-navbar")
     /**
      * @ngdoc function
      * @name toggleNavbarStatus
-     * @methodOf managerNavbar.managerNavbar
+     * @methodOf ovh-angular-manager-navbar.managerNavbar
      * @description
      *
      * Sets and broadcast the status of the menu: true if opened, false if closed
@@ -195,14 +195,14 @@ angular.module("ovh-angular-manager-navbar")
 
 /**
  * @ngdoc directive
- * @name managerNavbar.directive:managerNavbar
+ * @name ovh-angular-manager-navbar.directive:managerNavbar
  * @scope
  * @restrict EA
  * @description
  *
  * Create and manage a nav bar for the manager
  *
- * To use managerNavbar, you had to inject managerNavbar as dependency and use it like this example
+ * To use managerNavbar, you had to inject ovh-angular-manager-navbar as dependency and use it like this example
  * <pre>
  *  angular.module('myApp', ['ovh-angular-manager-navbar]);
  * </pre>
@@ -256,7 +256,7 @@ angular.module("ovh-angular-manager-navbar")
     };
 }]);
 
-angular.module('managerNavbar').run(['$templateCache', function($templateCache) {
+angular.module('ovh-angular-manager-navbar').run(['$templateCache', function($templateCache) {
   'use strict';
 
   $templateCache.put('ovh-angular-manager-navbar.html',
