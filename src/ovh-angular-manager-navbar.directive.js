@@ -2,14 +2,14 @@
 
 /**
  * @ngdoc directive
- * @name managerNavbar.directive:managerNavbar
+ * @name ovh-angular-manager-navbar.directive:managerNavbar
  * @scope
  * @restrict EA
  * @description
  *
  * Create and manage a nav bar for the manager
  *
- * To use managerNavbar, you had to inject managerNavbar as dependency and use it like this example
+ * To use managerNavbar, you had to inject ovh-angular-manager-navbar as dependency and use it like this example
  * <pre>
  *  angular.module('myApp', ['ovh-angular-manager-navbar]);
  * </pre>

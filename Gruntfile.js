@@ -93,7 +93,7 @@ module.exports = function (grunt) {
                 html5Mode: false,
                 title: 'Manager Navbar',
                 startPage: '/api/managerNavbar.managerNavbar',
-                sourceLink : "https://github.com/ovh-ux/ovh-angular-tail-logs/blob/master/{{file}}#{{codeline}}"
+                sourceLink : "https://github.com/ovh-ux/<%= name %>/blob/master/{{file}}#L{{codeline}}"
             },
             api: {
                 src: ['<%=srcdir%>/**/*.js'],
