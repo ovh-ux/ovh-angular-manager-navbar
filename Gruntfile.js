@@ -91,8 +91,8 @@ module.exports = function (grunt) {
             options: {
                 dest: 'docs',
                 html5Mode: false,
-                title: 'Manager Navbar',
-                startPage: '/api/managerNavbar.managerNavbar',
+                title: '<%= name %>',
+                startPage: '/api/<%= name %>.<%= name %>',
                 sourceLink : "https://github.com/ovh-ux/<%= name %>/blob/master/{{file}}#L{{codeline}}"
             },
             api: {
