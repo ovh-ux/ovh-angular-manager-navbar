@@ -27,7 +27,7 @@ NG_DOCS={
   },
   "html5Mode": false,
   "editExample": true,
-  "startPage": "/api/managerNavbar.managerNavbar",
+  "startPage": "/api/ovh-angular-manager-navbar.ovh-angular-manager-navbar",
   "scripts": [
     "angular.min.js"
   ]
