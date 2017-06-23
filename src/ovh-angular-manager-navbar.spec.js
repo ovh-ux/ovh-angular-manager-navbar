@@ -4,7 +4,11 @@ angular.module("ovh-angular-manager-navbar").constant("UNIVERSE", "TEST");
 
 describe("ovh-angular-manager-navbar", function () {
 
-    var $compile, $rootScope, $scope, $httpBackend, elem;
+    var $compile,
+        $rootScope,
+        $scope,
+        $httpBackend,
+        elem;
 
     beforeEach(angular.mock.module("ovh-angular-manager-navbar"));
 
@@ -28,15 +32,15 @@ describe("ovh-angular-manager-navbar", function () {
     });
 
     var templates = {
-        default: {
-            element : "<manager-navbar></manager-navbar",
-            scope   : {}
+        "default": {
+            element: "<manager-navbar></manager-navbar",
+            scope: {}
         }
     };
 
     function compileDirective (template, locals) {
         template = templates[template];
-        angular.extend($scope, angular.copy(template.scope) || angular.copy(templates["default"].scope), locals);
+        angular.extend($scope, angular.copy(template.scope) || angular.copy(templates.default.scope), locals);
         var element = $(template.element).appendTo(elem);
         element = $compile(element)($scope);
         $scope.$digest();
