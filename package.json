@@ -14,6 +14,8 @@
         "ovh-angular-toggleclass": "^1.2.1"
     },
     "devDependencies": {
+        "eslint": "^4.0.0",
+        "eslint-config-ovh": "^0.1.1",
         "grunt": "0.4.x",
         "grunt-angular-templates": "^0.5.7",
         "grunt-bump": "~0.0.11",
@@ -26,6 +28,7 @@
         "grunt-contrib-jshint": "~0.6.4",
         "grunt-contrib-uglify": "~0.2.7",
         "grunt-contrib-watch": "~0.5.3",
+        "grunt-eslint": "^20.0.0",
         "grunt-text-replace": "~0.3.8",
         "grunt-ng-annotate": "~0.10.0",
         "grunt-ngdocs": "^0.2.5",

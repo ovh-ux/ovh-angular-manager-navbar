@@ -1,4 +1,4 @@
-/*global angular*/
+/* global angular*/
 
 /**
  * @ngdoc directive
@@ -17,48 +17,49 @@
  *
  */
 angular.module("ovh-angular-manager-navbar")
-  .directive("managerNavbar", function (managerNavbar, UNIVERSE) {
-    "use strict";
-    return {
-        templateUrl: "ovh-angular-manager-navbar.html",
-        transclude: false,
-        restrict : "EA",
-        scope : {},
-        link: function($scope) {
-            managerNavbar.init();
+    .directive("managerNavbar", function (managerNavbar, UNIVERSE) {
+        "use strict";
+        return {
+            templateUrl: "ovh-angular-manager-navbar.html",
+            transclude: false,
+            restrict: "EA",
+            scope: {},
+            link: function ($scope) {
+                managerNavbar.init();
 
-            $scope.isActiveLink = function (universe) {
-                if (universe && UNIVERSE) {
-                    return universe.toUpperCase() === UNIVERSE.toUpperCase();
-                }
-                return false;
-            };
+                $scope.isActiveLink = function (universe) {
+                    if (universe && UNIVERSE) {
+                        return universe.toUpperCase() === UNIVERSE.toUpperCase();
+                    }
+                    return false;
+                };
 
-            $scope.toggleNavbarStatus = function(button){
-                managerNavbar.toggleNavbarStatus(button);
-            };
+                $scope.toggleNavbarStatus = function (button) {
+                    managerNavbar.toggleNavbarStatus(button);
+                };
 
-            var unregisterExt = $scope.$watch(managerNavbar.getExternalLinks, function (externalLinks) {
-                if (externalLinks && externalLinks.length) {
-                    $scope.externalLinks = externalLinks;
-                    unregisterExt();
-                }
-            });
+                var unregisterExt = $scope.$watch(managerNavbar.getExternalLinks, function (externalLinks) {
+                    if (externalLinks && externalLinks.length) {
+                        $scope.externalLinks = externalLinks;
+                        unregisterExt();
+                    }
+                });
 
-            var unregisterCurr = $scope.$watch(managerNavbar.getCurrentLink, function (currentLink) {
-                if (currentLink) {
-                    $scope.currentLink = currentLink;
-                    unregisterCurr();
-                }
-            }, true);
+                var unregisterCurr = $scope.$watch(managerNavbar.getCurrentLink, function (currentLink) {
+                    if (currentLink) {
+                        $scope.currentLink = currentLink;
+                        unregisterCurr();
+                    }
+                }, true);
 
-            /*var unregisterint =*/
-            $scope.$watch(managerNavbar.getInternalLinks, function (internalLinks) {
-                if (internalLinks && internalLinks.length) {
-                    $scope.internalLinks = internalLinks;
-                    //unregisterint();
-                }
-            }, true);
-        }
-    };
-});
+                /* var unregisterint =*/
+                $scope.$watch(managerNavbar.getInternalLinks, function (internalLinks) {
+                    if (internalLinks && internalLinks.length) {
+                        $scope.internalLinks = internalLinks;
+
+                    // unregisterint();
+                    }
+                }, true);
+            }
+        };
+    });

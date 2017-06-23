@@ -1,117 +1,117 @@
 module.exports = function (grunt) {
-    'use strict';
-    require('matchdep').filterAll('grunt-*').forEach(grunt.loadNpmTasks);
+    "use strict";
+    require("matchdep").filterAll("grunt-*").forEach(grunt.loadNpmTasks);
 
     grunt.initConfig({
-        pkg      : grunt.file.readJSON('package.json'),
-        bower    : grunt.file.readJSON('bower.json'),
-        distdir  : 'dist',
-        srcdir   : 'src',
-        builddir : '.work/.tmp',
-        name     : grunt.file.readJSON('package.json').name || 'ovh-angular-manager-navbar',   // module name
+        pkg: grunt.file.readJSON("package.json"),
+        bower: grunt.file.readJSON("bower.json"),
+        distdir: "dist",
+        srcdir: "src",
+        builddir: ".work/.tmp",
+        name: grunt.file.readJSON("package.json").name || "ovh-angular-manager-navbar", // module name
 
         // Obfuscate
-        uglify   : {
-            js : {
-                options : {
-                    banner : '/*! <%= pkg.name %> - <%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %> */\n'
+        uglify: {
+            js: {
+                options: {
+                    banner: '/*! <%= pkg.name %> - <%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %> */\n'
                 },
-                files   : {
-                    '<%= distdir %>/ovh-angular-manager-navbar.min.js' : '<%= builddir %>/ovh-angular-manager-navbar.js'
+                files: {
+                    "<%= distdir %>/ovh-angular-manager-navbar.min.js": "<%= builddir %>/ovh-angular-manager-navbar.js"
                 }
             }
         },
 
-        copy       : {
-            dist : {
-                files : [
+        copy: {
+            dist: {
+                files: [
                     {
-                        expand : true,
-                        cwd    : '<%= builddir %>',
-                        src    : 'ovh-angular-manager-navbar.js',
-                        dest   : '<%= distdir %>/'
+                        expand: true,
+                        cwd: "<%= builddir %>",
+                        src: "ovh-angular-manager-navbar.js",
+                        dest: "<%= distdir %>/"
                     }
                 ]
             }
         },
 
         // Clean
-        clean      : {
-            dist : {
-                src : [
-                    '<%= builddir %>',
-                    '<%= distdir %>/*.js'
+        clean: {
+            dist: {
+                src: [
+                    "<%= builddir %>",
+                    "<%= distdir %>/*.js"
                 ]
             }
         },
 
         // JS Check
-        jshint     : {
-            options : {
-                jshintrc : '.jshintrc'
+        jshint: {
+            options: {
+                jshintrc: ".jshintrc"
             },
-            js      : [
-                '<%=srcdir%>/*.js',
-                '<%=srcdir%>/*/*.js',
-                '!<%=srcdir%>/*.spec.js'
+            js: [
+                "<%=srcdir%>/*.js",
+                "<%=srcdir%>/*/*.js",
+                "!<%=srcdir%>/*.spec.js"
             ]
         },
 
         // Concatenation
-        concat     : {
-            dist : {
-                files : {
-                    '<%= builddir %>/ovh-angular-manager-navbar.js' : [
-                        '<%=srcdir%>/ovh-angular-manager-navbar.js',
-                        '<%=srcdir%>/ovh-angular-manager-navbar.service.js',
-                        '<%=srcdir%>/ovh-angular-manager-navbar.directive.js',
-                        '<%= builddir %>/tpls.js'
+        concat: {
+            dist: {
+                files: {
+                    "<%= builddir %>/ovh-angular-manager-navbar.js": [
+                        "<%=srcdir%>/ovh-angular-manager-navbar.js",
+                        "<%=srcdir%>/ovh-angular-manager-navbar.service.js",
+                        "<%=srcdir%>/ovh-angular-manager-navbar.directive.js",
+                        "<%= builddir %>/tpls.js"
                     ]
                 }
             }
         },
 
         // Check complexity
-        complexity : {
-            generic : {
-                src     : [
-                    '<%=srcdir%>/*.js',
-                    '<%=srcdir%>/*/*.js'
+        complexity: {
+            generic: {
+                src: [
+                    "<%=srcdir%>/*.js",
+                    "<%=srcdir%>/*/*.js"
                 ],
-                options : {
-                    errorsOnly      : false,
-                    cyclomatic      : 12,
-                    halstead        : 45,
-                    maintainability : 82
+                options: {
+                    errorsOnly: false,
+                    cyclomatic: 12,
+                    halstead: 45,
+                    maintainability: 82
                 }
             }
         },
 
         ngdocs: {
             options: {
-                dest: 'docs',
+                dest: "docs",
                 html5Mode: false,
-                title: '<%= name %>',
-                startPage: '/api/<%= name %>.<%= name %>',
-                sourceLink : "https://github.com/ovh-ux/<%= name %>/blob/master/{{file}}#L{{codeline}}"
+                title: "<%= name %>",
+                startPage: "/api/<%= name %>.<%= name %>",
+                sourceLink: "https://github.com/ovh-ux/<%= name %>/blob/master/{{file}}#L{{codeline}}"
             },
             api: {
-                src: ['<%=srcdir%>/**/*.js'],
-                title: 'api'
+                src: ["<%=srcdir%>/**/*.js"],
+                title: "api"
             }
         },
 
         ngAnnotate: {
             dist: {
                 files: {
-                    '<%= builddir %>/<%= name %>.js' : ['<%= builddir %>/<%= name %>.js']
+                    "<%= builddir %>/<%= name %>.js": ["<%= builddir %>/<%= name %>.js"]
                 }
             }
         },
 
         ngtemplates: {
             options: {
-                module: '<%= name %>',
+                module: "<%= name %>",
                 htmlmin: {
                     collapseBooleanAttributes: true,
                     collapseWhitespace: true,
@@ -124,31 +124,38 @@ module.exports = function (grunt) {
                 }
             },
             dist: {
-                cwd    : '<%= srcdir %>/',
-                src    : ['**/*.html'],
-                dest   : '<%= builddir %>/tpls.js'
+                cwd: "<%= srcdir %>/",
+                src: ["**/*.html"],
+                dest: "<%= builddir %>/tpls.js"
             }
         },
 
         // To release
-        bump       : {
-            options : {
-                pushTo        : 'origin',
-                files         : [
-                    'package.json',
-                    'bower.json'
+        bump: {
+            options: {
+                pushTo: "origin",
+                files: [
+                    "package.json",
+                    "bower.json"
                 ],
-                updateConfigs : ['pkg', 'bower'],
-                commitFiles   : ['-a']
+                updateConfigs: ["pkg", "bower"],
+                commitFiles: ["-a"]
             }
         },
 
         // Testing
         karma: {
             unit: {
-                configFile: 'karma.conf.js',
+                configFile: "karma.conf.js",
                 singleRun: true
             }
+        },
+
+        eslint: {
+            options: {
+                configFile: "./.eslintrc.json"
+            },
+            target: ["src/**/!(*.spec|*.integration).js"]
         }
     });
 
@@ -160,6 +167,7 @@ module.exports = function (grunt) {
         grunt.task.run([
             "clean",
             "jshint",
+            "eslint",
             "complexity",
             "karma"
         ]);
