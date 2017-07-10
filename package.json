@@ -1,6 +1,6 @@
 {
     "name": "ovh-angular-manager-navbar",
-    "version": "6.6.2",
+    "version": "6.6.3",
     "description": "Navigation bar for the managers",
     "main": "./dist/ovh-angular-manager-navbar.min.js",
     "repository": "ovh-ux/ovh-angular-manager-navbar.git",
