@@ -85,35 +85,40 @@
                         <span data-ng-bind="link.label"></span>
                     </button>
 
-                    <div class="dropdown-menu">
-                        <div data-ng-if="link.headerTemplate" data-ng-bind-html="link.headerTemplate"></div>
-                        <ul data-ng-if="link.subLinks"
-                            class=" {{ link.listClass }}"
-                            role="menu">
+                    <ul data-ng-if="link.subLinks"
+                        class="dropdown-menu"
+                        data-ng-class="{{ link.listClass }}"
+                        role="menu">
 
-                            <li data-ng-repeat="subLink in link.subLinks">
-                                <a href="{{::subLink.url}}"
-                                data-ng-if="subLink.url && !subLink.template">
-                                    <i data-ng-if="::subLink.icon" class="{{subLink.icon}}" aria-hidden="true"></i>
-                                    <span data-ng-bind="subLink.label"></span>
-                                </a>
-                                <a href="{{::subLink.url}}"
-                                data-ng-if="subLink.url && subLink.template"
-                                data-ng-bind-html="subLink.template">
-                                </a>
-                                <span data-ng-if="!subLink.url && !subLink.click && subLink.template"
-                                    data-ng-bind-html="subLink.template"></span>
-                                <button type="button"
-                                data-ng-click="subLink.click();"
-                                data-ng-if="subLink.click"
-                                data-ng-attr-lang="{{subLink.lang}}">
-                                    <i data-ng-if="::subLink.icon" class="{{subLink.icon}}" aria-hidden="true"></i>
-                                    <span data-ng-bind="subLink.label"></span>
-                                </button>
-                            </li>
-                        </ul>
-                        <div data-ng-if="link.footerTemplate" data-ng-bind-html="link.footerTemplate"></div>
-                    </div>
+                        <li data-ng-if="link.headerTemplate"
+                            data-ng-bind-html="link.headerTemplate">
+                        </li>
+
+                        <li data-ng-repeat="subLink in link.subLinks">
+                            <a href="{{::subLink.url}}"
+                            data-ng-if="subLink.url && !subLink.template">
+                                <i data-ng-if="::subLink.icon" class="{{subLink.icon}}" aria-hidden="true"></i>
+                                <span data-ng-bind="subLink.label"></span>
+                            </a>
+                            <a href="{{::subLink.url}}"
+                            data-ng-if="subLink.url && subLink.template"
+                            data-ng-bind-html="subLink.template">
+                            </a>
+                            <span data-ng-if="!subLink.url && !subLink.click && subLink.template"
+                                data-ng-bind-html="subLink.template"></span>
+                            <button type="button"
+                            data-ng-click="subLink.click();"
+                            data-ng-if="subLink.click"
+                            data-ng-attr-lang="{{subLink.lang}}">
+                                <i data-ng-if="::subLink.icon" class="{{subLink.icon}}" aria-hidden="true"></i>
+                                <span data-ng-bind="subLink.label"></span>
+                            </button>
+                        </li>
+
+                        <li data-ng-if="link.footerTemplate"
+                            data-ng-bind-html="link.footerTemplate">
+                        </li>
+                    </ul>
                 </li>
             </ul>
         </div>
