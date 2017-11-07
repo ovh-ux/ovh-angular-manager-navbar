@@ -310,9 +310,28 @@
     }
 }
 
+//BackDrop
+#full-overlay {
+    background: black;
+    bottom: 0;
+    display: none;
+    left: 0;
+    opacity: 0.4;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: @zIndexNav;
+}
+
 
 //mobile
 @media (max-width: @screen-sm-min) {
+
+    //BackDrop
+    #full-overlay[class*="nav-open"] {
+        display    : block;
+    }
+
     button.navbar-button,
     toggle-class.navbar-button button {
         width            : 45px;
